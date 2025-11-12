@@ -1,92 +1,109 @@
-# 5-day-agents-from-prompt-to-action
-Your First AI Agent: From Prompt to Action
+# 🧠 From Prompt to Action — AI Agent Project
 
-## 🎯 Overview
-This project demonstrates how to build an **AI Agent** that can understand natural-language instructions and perform actions autonomously using Google's Gemini API and the Google ADK.
+This repository ports the Kaggle notebook **“Day 1a – From Prompt to Action”** from the *5 Days of AI Agents* series into a fully reproducible and extensible GitHub project.
+
+The goal is to build and explore an **AI Agent** that can take natural-language instructions and autonomously perform actions or generate structured results using the **Google AI Development Kit (ADK)** and **Gemini API**.
+
+---
+
+## 🚀 Overview
+
+This project is the foundation of an intelligent system that turns text prompts into executable actions.
+
+It demonstrates how to:
+- Set up the **Google AI Development Kit (ADK)**.
+- Build your **first AI Agent** capable of interpreting human language.
+- Interact with the **ADK Web Interface** for visualization.
+- Extend the agent to handle multi-step reasoning and richer outputs.
+
+---
 
 ## 🧩 Project Structure
-- `notebook.ipynb` — main notebook migrated from Kaggle with examples and tutorials
-- `src/agent.py` — reusable agent logic using `google-adk` and `Gemini API`
-- `requirements.txt` — includes `google-adk`, `google-generativeai`, and helper libs
+
+```
+.
+├── notebook.ipynb    # Original Kaggle notebook
+├── src/
+│   ├── agent.py                             # Core agent implementation
+│   ├── utils.py                             # Helper functions for logging, prompts, etc.
+│   └── __init__.py
+├── requirements.txt                         # Dependencies
+├── .gitignore
+└── README.md
+```
+
+---
 
 ## ⚙️ Setup
 
-### Prerequisites
-- Python 3.8 or higher
-- Google API key (get one from [Google AI Studio](https://makersuite.google.com/app/apikey))
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/jdnichollsc/5-day-agents-from-prompt-to-action.git
-cd 5-day-agents-from-prompt-to-action
-```
-
-2. Install dependencies:
+### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-Or install manually:
+### 2. Configure environment variables
+Set your **Gemini API key**:
 ```bash
-pip install google-adk google-generativeai jupyterlab
+export GEMINI_API_KEY="your_api_key_here"
 ```
 
-3. Set up your API key:
-Create a `.env` file in the project root:
+---
+
+## 📓 Usage
+
+You can run this project either via **Jupyter Notebook** or as a **Python module**.
+
+### Option A — Run the Notebook
 ```bash
-GOOGLE_API_KEY=your-api-key-here
+jupyter lab notebook.ipynb
 ```
 
-## 🚀 Usage
-
-### Using the Jupyter Notebook
-Launch JupyterLab and open `notebook.ipynb`:
+### Option B — Run the Agent Script
 ```bash
-jupyter lab
+python src/agent.py
 ```
 
-### Using the Agent Programmatically
+---
+
+## 🧠 What the Agent Does
+
+The AI Agent:
+1. Accepts a natural-language instruction (e.g., “Summarize this paragraph”).
+2. Uses the Gemini model through ADK to understand intent.
+3. Generates executable actions or responses.
+4. Displays structured or visualized outputs interactively.
+
+Example:
 ```python
-from src.agent import create_agent
-
-# Create an agent instance
-agent = create_agent()
-
-# Generate content
-response = agent.generate_content("Explain quantum computing in simple terms")
-print(response)
-
-# Start a chat session
-agent.start_chat()
-response = agent.send_message("Hello! Can you help me with Python?")
-print(response)
+agent.run("Create a short poem about AI Agents learning from humans.")
 ```
 
-## 📚 Features
-- **Natural Language Understanding**: Process and respond to natural language instructions
-- **Chat Sessions**: Maintain conversation context across multiple interactions
-- **Content Generation**: Generate content based on prompts
-- **Chat History**: Access and review conversation history
-- **Extensible Design**: Easy to customize and extend for specific use cases
+---
 
-## 🛠️ Development
-The agent is built using:
-- **Google ADK**: For agent development kit functionality
-- **Google Generative AI**: For accessing the Gemini API
-- **Python-dotenv**: For environment variable management
+## 🧪 Extend the Project
 
-## 📖 Examples
-Check out `notebook.ipynb` for comprehensive examples including:
-- Simple content generation
-- Interactive chat sessions
-- Task-oriented agents
-- Code generation
-- Chat history management
+Future ideas:
+- 🧰 Add memory or context chaining for multi-step reasoning.
+- 🔗 Integrate external tools (search, data APIs, or code execution).
+- 🎨 Build a web interface to interact with your agent visually.
+- 🧩 Convert this into a modular `pip` package for easy reuse.
 
-## 🤝 Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests.
+---
 
-## 📄 License
-See [LICENSE](LICENSE) for details.
+## 🧑‍💻 For GitHub Copilot
+
+When suggesting code:
+- Focus on **extensibility** and **clarity**.
+- Keep examples **educational** for beginners exploring ADK and agents.
+- Use clear function docstrings and type hints.
+- Suggest improvements for modularity and testability.
+
+---
+
+## 💬 Acknowledgements
+
+Based on the Kaggle course:
+> *5 Days of AI Agents with Google*  
+> Original Notebook: [Day 1a - From Prompt to Action](https://www.kaggle.com/code/kaggle5daysofai/day-1a-from-prompt-to-action)
+
+---
